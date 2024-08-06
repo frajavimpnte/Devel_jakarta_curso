@@ -1,0 +1,4 @@
+net\ensode\javaee8book\jsfwebsocket\config\ConfigurationBean.class
+net\ensode\javaee8book\jsfwebsocket\JsfWebSocketMessageSender.class
+net\ensode\javaee8book\jsfwebsocket\JsfWebSocketController.class
+net\ensode\javaee8book\jsfwebsocket\endpoint\FakeEndpoint.class
