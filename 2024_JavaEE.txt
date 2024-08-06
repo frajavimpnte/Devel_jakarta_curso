@@ -1,0 +1,110 @@
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>> JSF and routes
+>>>>>>
+https://itnext.io/an-introduction-to-jakarta-faces-4-0-by-examples-d949a7093236-------------------------------
+In Jakarta EE 8.0, we have accomplished the changes of the maven artifactId from javaee to jakarta.
+
+In Jakarta EE 9.0, the main work is applying new jakarta namespace in the code level. Almost all packages 
+use jakarta instead of javax in Java source codes, and XML namespace use jakarta.ee to replace jcp.org in the 
+XML schema definition. But there is an exception, Faces 3.0 still use the legacy jcp.org in the Faceslet views.
+
+In Faces 4.0, it introduces the shorter URN(Uniform Resource Name)s to replace the original URIs.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>> JSF and validations
+>>>>>>
+
+https://www.javacodegeeks.com/2024/04/getting-started-with-jakarta-faces.html
+
+Jakarta EE8 book ------------------------------------------------------------------------
+Chapter 04 UITemplate JSF  => http://localhost:8080/JKEE8ch04UItemplateJSF/dashboard.xhtml
+		              http://localhost:8080/JKEE8ch04UItemplateJSF/
+			      si bootstrap 3.1
+
+packpub Java EE 8 Application Development GOOD-------------------------------------------
+Chapter 2. JavaServer Faces
+https://subscription.packtpub.com/book/programming/9781788293679/2
+
+JEE8AppDevel CH02 facesflow  		 				=> no bootstrap
+JEE8AppDevel CH02 jsfpassthroughattrs HTML JSF Pass Through Attributes	=> no bootstrap
+JEE8AppDevel CH02 jsfajax JAva EE 6 Webapp				=> no bootstrap
+JEE8AppDevel CH02 jsfarbitrarymess					=> no bootstrap
+JEE8AppDevel CH02 JSF Custom Messages Webapp	jsfcustommes		=> no bootstrap jsessionid
+JEE8AppDevel CH02 JSF Custom Validation Maven Webapp jsfcustomval 	=> si bootstrap jsessionid
+JEE8AppDevel CH02 jsfhtmlmarkup						=> no bootstrap jsessionid validacion
+JEE8AppDevel CH02 JSF Maven Webapp jsf_intro				=> si bootstrap jsessionid
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>> Java Saving files doc or images 
+>>>>>>    This article is targeted on JSF 2.0/2.1. Since JSF 2.2 there's finally native file upload 
+>>>>>>	  component in flavor of <h:inputFile> whose value can be tied to a javax.servlet.http.Part property. 
+>>>>>>    It's recommended to make use of it directly. 
+
+https://www.baeldung.com/upload-file-servlet
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>> JPA
+>>>>>>
+packpub Java EE 8 Application Development GOOD-------------------------------------------
+Chapter 3. Object Relational Mapping with the Java Persistence API
+https://subscription.packtpub.com/book/programming/9781788293679/3
+:: external https://www.oracle.com/java/technologies/data-access-object.html
+
+
+JPA collection mappings ============================================================
+https://www.geeksforgeeks.org/jpa-collection-mapping/
+In the CustomerDB database, for example:!!! Collections can be Set!!!!!
+	??? What kind of Collections or Set, or List, or ArrayList, HashSet is really returned!!!
+
+	:there is a one-to-one relationship between the LOGIN_INFO and the CUSTOMERS tables.
+	 This means that each customer has exactly one corresponding row in the login info table.
+	 Customer:
+		  @OneToOne(mappedBy = "customer")
+		  private LoginInfo loginInfo;
+
+	:There is also a one-to-many relationship between the CUSTOMERS table and the ORDERS table. 
+         This is because a customer can place many orders, but each order belongs only to a single customer. 
+	 Customer:
+		  @OneToMany(mappedBy = "customer")
+		  private Set<Order> orders;
+	 Order
+		  @ManyToOne
+		  @JoinColumn(name = "CUSTOMER_ID")
+		  private Customer customer;
+	 
+        :Additionally, there is a many-to-many relationships between the ORDERS table and the ITEMS table. 
+ 	 This is because an order can contain many items and an item can be on many orders.
+	 Item:
+		@ManyToMany(mappedBy="items")
+		private Collection<Order> orders;
+	 Order:
+		  @ManyToMany
+		  @JoinTable(name = "ORDER_ITEMS", 
+		      joinColumns = @JoinColumn(name = "ORDER_ID", referencedColumnName = "ORDER_ID"), 
+  	              inverseJoinColumns = @JoinColumn(name = "ITEM_ID", referencedColumnName = "ITEM_ID"))
+		  private Collection<Item> items;
+
+JPQL is a SQL-like language used for retrieving, updating, and deleting entities in a database.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>> REST
+>>>>>>
+packpub Java EE 8 Application Development GOOD-------------------------------------------
+Chapter 10. RESTful Web Services with JAX-RS
+https://subscription.packtpub.com/book/programming/9781788293679/10
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>> SECURE
+>>>>>>
+packpub Java EE 8 Application Development GOOD-------------------------------------------
+Chapter 9. Securing Java EE Applications
+https://subscription.packtpub.com/book/programming/9781788293679/9
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>> MVC
+>>>>>>
+https://blog.payara.fish/a-look-at-jakarta-mvc-in-jakarta-ee-10
+https://www.mastertheboss.com/java-ee/jakarta-ee/jakarta-mvc-made-simple/
+https://www.baeldung.com/java-ee-mvc-eclipse-krazo

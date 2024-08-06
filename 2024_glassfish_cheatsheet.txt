@@ -1,0 +1,13 @@
+galssfish domain =============================================================
+::configuration file
+domain.xml (located in GLASSFISH_INSTALL/domain/DOMAIN_NAME/config
+!!! make a backup !!!!
+
+::asadmin verify-domain-xml
+::asadmin restore-domain
+::asadmin backup-domain
+::asadmin create-domain domain-name
+::asadmin delete-domain domain1
+::asadmin start-domain domain1
+::asadmin stop-domain domain1
+::asadmin list-domain
