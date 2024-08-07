@@ -4,8 +4,7 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
         <title>Facelet Title</title>
-            <h:outputStylesheet library="webjars" name="bootstrap/5.3.3/css/bootstrap.min-jsf.css" />
-            
+        <h:outputStylesheet library="webjars" name="bootstrap/5.3.3/css/bootstrap.min-jsf.css" />            
     </h:head>
     <h:body>        
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -45,6 +44,15 @@
         </div>
       </nav>
         
+        
+      <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
         
         <h:outputScript library="webjars" name="bootstrap/5.3.3/js/bootstrap.min.js" />
     </h:body>

@@ -5,7 +5,7 @@
     <artifactId>jakartajsfbootstrap</artifactId>
     <version>1.0</version>
     <packaging>war</packaging>
-    <name>jakartajsfbootstrap-1.0</name>
+    <name>Devel_jakarta_curso jakartajsfbootstrap-1.0</name>
     
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
